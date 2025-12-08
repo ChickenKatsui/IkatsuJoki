@@ -1,0 +1,314 @@
+/* --- CSS VARIABLES & RESET --- */
+:root {
+    /* Warna */
+    --bg-color: #0f1014; 
+    --card-bg: #1a1b21;
+    --text-main: #ffffff;
+    --text-muted: #a4a4a4;
+    --accent: #d4af37; /* Gold */
+    
+    /* FONT */
+    --font-body: 'Poppins', sans-serif;
+    --font-heading: 'Outfit', sans-serif;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    overflow-x: hidden;
+    font-weight: 300;
+}
+
+a { 
+    text-decoration: none; 
+    color: inherit; 
+    transition: 0.3s; 
+}
+ul { 
+    list-style: none; 
+}
+
+/* --- UTILITIES --- */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding { 
+    padding: 120px 0; 
+}
+
+/* Heading Style */
+h1, h2, h3 { 
+    font-family: var(--font-heading); 
+    font-weight: 600; 
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 35px;
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    margin-top: 25px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--accent);
+    color: var(--bg-color);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+/* --- HEADER --- */
+header {
+    padding: 30px 0;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo { 
+    font-size: 26px; 
+    font-weight: 700; 
+    font-family: var(--font-heading); 
+    letter-spacing: -1px;
+}
+
+.nav-links { 
+    display: flex; 
+    gap: 40px; 
+}
+.nav-links a { 
+    font-size: 14px; 
+    color: var(--text-muted); 
+    font-weight: 400;
+}
+.nav-links a:hover { 
+    color: var(--text-main); 
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #1f2129 0%, #0f1014 60%);
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    margin-bottom: 25px;
+    background: linear-gradient(to right, #fff, #a0a0a0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+/* --- SERVICES (JOKI) --- */
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    margin-bottom: 70px;
+    font-weight: 600;
+}
+
+/* 1 KOLOM */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 20px; 
+    max-width: 800px; 
+    margin: 0 auto; 
+}
+
+.service-card {
+    background: linear-gradient(145deg, #1a1b21, #15161a);
+    padding: 50px 40px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.03);
+    transition: 0.4s;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.service-card h3 { 
+    font-size: 1.4rem; 
+    margin-bottom: 15px; 
+}
+.service-card p { 
+    color: var(--text-muted); 
+    font-size: 0.95rem; 
+    margin-bottom: 5px;
+}
+
+/* Gaya untuk daftar harga di dalam kartu */
+.service-card ul {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.service-card ul li {
+    margin-bottom: 5px;
+    list-style: disc;
+    margin-left: 20px;
+}
+
+/* --- HARGA DISPLAY ELEGANT --- */
+.price-display {
+    border-top: 1px solid rgba(255, 255, 255, 0.1); 
+    margin-top: auto; 
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.price-label {
+    font-size: 13px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: var(--font-heading);
+}
+
+.price-amount {
+    font-size: 2rem; 
+    color: var(--accent); 
+    font-weight: 700;
+    font-family: var(--font-heading);
+}
+
+.price-note {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 10px;
+    text-align: right;
+    opacity: 0.7;
+    font-style: italic;
+}
+
+/* --- PORTFOLIO --- */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-item {
+    height: 350px;
+    background-color: #222;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Placeholder Image Style */
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+    opacity: 0.6;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(0,0,0,1), transparent);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.portfolio-item:hover img { 
+    transform: scale(1.05); 
+    opacity: 1; 
+}
+.portfolio-item:hover .portfolio-overlay { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+/* --- CONTACT --- */
+.contact-box {
+    background: #15161a;
+    padding: 60px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.05);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- FOOTER --- */
+footer {
+    border-top: 1px solid #1a1b21;
+    padding: 50px 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .hero h1 { 
+        font-size: 3rem; 
+    }
+    .nav-links { 
+        display: none; 
+    } 
+    .section-padding { 
+        padding: 80px 0; 
+    }
+}
